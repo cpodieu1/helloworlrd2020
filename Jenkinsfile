@@ -6,21 +6,21 @@ pipeline {
           echo "hello word"
         }
       }
-           agent any
+    agent any
      stages {
       stage('test'){
         steps {
           echo "deploy word"
         }
       }
-           agent any
+    agent any
      stages {
       stage('deploy'){
         steps {
           echo "test"
         }
       }
-           agent any
+    agent any
      stages {
       stage('time'){
         steps {
