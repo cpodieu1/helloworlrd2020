@@ -35,6 +35,17 @@ pipeline {
       }
     
     }
+    post{
+        always{
+          echo "Always display this message"
+        }  
+        failure{
+           echo "job failed" 
+        }
+        success{
+           echo "this job is unstable" 
+        }
+    }
 
 }
 
