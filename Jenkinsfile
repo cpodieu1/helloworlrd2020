@@ -1,9 +1,10 @@
 pipeline {
      agent any
-     stages('Init') {
-          steps {
-               echo 'Hi, this is Podieu'
-               echo 'We are Starging the Testing'
+     stages {
+          stage('Init') {
+               steps {
+                    echo 'Hi, this is Podieu'
+                    echo 'We are Starting the Testing'
           }
      }
      stage('Build') {
