@@ -1,10 +1,15 @@
 pipeline {
   agent any
-   tools {
-        M2_HOME 'apache-maven-3.6.3' 
-   }
   stages {
     stage('Build Application') {
+         def mvn_version = 'M3'
+        withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+        sh '''for f in i7j-*; do
+                (cd $f && mvn clean package -Dmaven.test.skip=true -Dadditionalparam=-Xdoclint:none  | tee ../jel-mvn-$f.log) &
+              done
+              wait'''
+        }
+   }
       steps {
         sh 'mvn --version '
       }
