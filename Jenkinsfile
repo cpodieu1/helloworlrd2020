@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Buil Application') {
      steps {
-        sh 'mvn --version '
+        echo "welcome"
       }
       post {
         success {
