@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build Application') {
       steps {
-        sh 'mvn --version '
+        maven 'mvn --version '
       }
       post {
         success {
