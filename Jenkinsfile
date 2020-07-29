@@ -1,9 +1,12 @@
 pipeline {
   agent any
+   tools {
+        maven 'apache-maven-3.6.3' 
+   }
   stages {
     stage('Build Application') {
       steps {
-        maven 'mvn --version '
+        sh 'mvn --version '
       }
       post {
         success {
