@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build Application') {
       steps {
-        sh 'mvn -f helloworlrd2020/pom.xml clean install package'
+        sh 'mvn --version '
       }
       post {
         success {
