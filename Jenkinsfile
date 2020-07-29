@@ -1,31 +1,21 @@
 pipeline {
     agent any
-    triggers {
-        cron('H */1 * * *')
-    } 
-    tools {
-        maven 'M2_HOME'
-    }
     stages {
-      stage('Build'){
-        steps {
-          echo "Build step"
-          sh 'mvn clean'
-          sh 'mvn install'
-          sh 'mvn package'
+        stage('Init') {
+            steps {
+                echo 'hi this christ podieu'
+                echo ' we are Starting the Testing'
+            }
         }
-      
-      
-      }
-        stage('test '){
-        steps {
-          echo "test step"
-          sh 'mvn test'
+        stage('Build') {
+            steps {
+                echo 'Building Sample Maven Project'
+            }
         }
-      
-      
-      }
-        stage('deploy'){
-        steps {
+        stage('Deploy') {
+            steps {
+                echo "Deploying in staging Area"
+            }
         }
+    }
 }
