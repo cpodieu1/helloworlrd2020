@@ -1,15 +1,19 @@
-Pipeline {
+pipeline {
      agent any
-     stages {
-          stage('Build Application') {
-               steps {
-                    //sh 'mvn clean install package'
-               }
-               post {
-                    success {
-                         echo "Now Archiving the Artifacts..."
-                    }
-               }
+     stages('Init') {
+          steps {
+               echo 'Hi, this is Podieu'
+               echo 'We are Starging the Testing'
+          }
+     }
+     stage('Build') {
+          steps {
+               echo 'Building Sample Maven project'
+          }
+     }
+     stage('Deploy') {
+          steps {
+               echo "Deploying in Staging Area"
           }
      }
 }
