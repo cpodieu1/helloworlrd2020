@@ -28,7 +28,7 @@ pipeline {
         stage('deploy'){
         steps {
           echo "deploy war file"
-          sshPublisher(publishers: [sshPublisherDesc(configName: 'docker/ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker rmi ewr-app:v.1.1; docker build -t ewr-app:v.1.1 .; docker tag ewr-app:v.1.1 podieu/ewr-app:v.1.1; docker push podieu/ewr-app:v.1.1', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'webapp/target', sourceFiles: '**/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+          sshPublisher(publishers: [sshPublisherDesc(configName: 'docker/ansible', transfers: [sshTransfer()
         }
       
       
