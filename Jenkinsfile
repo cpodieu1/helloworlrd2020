@@ -28,6 +28,5 @@ pipeline {
         stage('deploy'){
         steps {
           echo "deploy war file"
-          sshPublisher(publishers: [sshPublisherDesc(configName: 'docker/ansible', transfers: [sshTransfer()
         }
 }
