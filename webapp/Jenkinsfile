@@ -1,0 +1,16 @@
+Pipeline {
+     agent any
+     stages {
+         stage('Buil Application') {
+             steps {
+                  sh 'mvn clean install package'
+             }
+             post {
+                 success {
+                      echo "Now Archiving the Artifacts..."
+                      archiveArtifacts artifacts: '**/*.war'
+                 }
+             }
+         }
+     }
+}
